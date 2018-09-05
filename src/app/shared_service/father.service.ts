@@ -29,9 +29,4 @@ export class FatherService {
   errorHandler(error: Response) {
     return throwError(error || "SERVER ERROR");
   }
-
-
-
-
-
 }
