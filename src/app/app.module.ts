@@ -5,6 +5,8 @@ import {RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { IndexComponent } from './components/index/index.component';
 import { CreateFatherComponent } from './components/create-father/create-father.component';
+import { FatherService} from './shared_service/father.service';
+import {HttpModule } from '@angular/http';
 
 
 const appRoutes:Routes=[
@@ -21,7 +23,8 @@ const appRoutes:Routes=[
   ],
   imports: [
     BrowserModule, 
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
