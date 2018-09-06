@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Route } from '@angular/compiler/src/core';
 import { Father } from '../../father';
 import { FatherService } from '../../shared_service/father.service';
 

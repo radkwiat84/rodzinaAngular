@@ -13,7 +13,7 @@ import {ChildService} from './shared_service/child.service';
 
 const appRoutes:Routes=[
   {path:'', component:IndexComponent},
-  {path:'createFather', component:CreateFatherComponent}
+  {path:'createFather', component:CreateFatherComponent},
   {path:'createChild', component:CreateChildComponent}
 ]
 

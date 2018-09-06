@@ -10,26 +10,26 @@ import { throwError } from 'rxjs';
 })
 export class ChildService {
   private baseUrl: string = 'http://localhost:8080/child';
-  private headers = new Headers({'Content-Type':'application/json'});
-  private options = new RequestOptions({headers: this.headers});
+  private headers = new Headers({ 'Content-Type': 'application/json' });
+  private options = new RequestOptions({ headers: this.headers });
   private child: Child;
 
   constructor(private _http: Http) { }
 
-  createChild(child: Child){
-    return this._http.post(this.baseUrl+'/createChild', JSON.stringify(child), this.options)
-      .pipe(map((response: Response)=> response.json()), catchError(this.errorHandler));
+  createChild(child: Child) {
+    return this._http.post(this.baseUrl + '/createChild', JSON.stringify(child), this.options)
+      .pipe(map((response: Response) => response.json()), catchError(this.errorHandler));
   }
 
-  errorHandler(error: Response){
-    return throwError(error||"SERVER ERROR");
+  errorHandler(error: Response) {
+    return throwError(error || "SERVER ERROR");
   }
 
-  setter(child: Child){
+  setter(child: Child) {
     this.child = child;
   }
 
-  getter(){
+  getter() {
     return this.child;
   }
 

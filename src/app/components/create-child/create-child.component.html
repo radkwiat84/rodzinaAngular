@@ -1,5 +1,5 @@
 <div class="container">
-  <form>
+  <form (ngSubmit)="processForm()">
     <div class="form group">
       <label for="firstName">First Name</label>
       <input type="text" name="firstName" class="form-control" [(ngModel)]="child.firstName">
