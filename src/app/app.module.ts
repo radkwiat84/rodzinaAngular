@@ -8,6 +8,7 @@ import { FatherService} from './shared_service/father.service';
 import {HttpModule } from '@angular/http';
 import {FormsModule} from '@angular/forms';
 import { CreateChildComponent } from './components/create-child/create-child.component';
+import {ChildService} from './shared_service/child.service';
 
 
 const appRoutes:Routes=[
