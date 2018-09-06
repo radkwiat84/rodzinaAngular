@@ -8,6 +8,7 @@ import { CreateFatherComponent } from './components/create-father/create-father.
 import { FatherService} from './shared_service/father.service';
 import {HttpModule } from '@angular/http';
 import {FormsModule} from '@angular/forms';
+import { CreateChildComponent } from './components/create-child/create-child.component';
 
 
 const appRoutes:Routes=[
@@ -20,7 +21,8 @@ const appRoutes:Routes=[
   declarations: [
     AppComponent,
     IndexComponent,
-    CreateFatherComponent
+    CreateFatherComponent,
+    CreateChildComponent
   ],
   imports: [
     BrowserModule, 
