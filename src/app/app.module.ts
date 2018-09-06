@@ -7,6 +7,7 @@ import { IndexComponent } from './components/index/index.component';
 import { CreateFatherComponent } from './components/create-father/create-father.component';
 import { FatherService} from './shared_service/father.service';
 import {HttpModule } from '@angular/http';
+import {FormsModule} from '@angular/forms';
 
 
 const appRoutes:Routes=[
@@ -24,7 +25,8 @@ const appRoutes:Routes=[
   imports: [
     BrowserModule, 
     RouterModule.forRoot(appRoutes),
-    HttpModule
+    HttpModule, 
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
