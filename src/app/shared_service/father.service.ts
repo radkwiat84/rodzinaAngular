@@ -13,6 +13,7 @@ export class FatherService {
   private headers = new Headers({ 'Content-Type': 'application/json' });
   private options = new RequestOptions({ headers: this.headers });
   private father:Father;
+
   constructor(private _http: Http) { }
 
   createFather(father: Father) {
@@ -29,4 +30,14 @@ export class FatherService {
   errorHandler(error: Response) {
     return throwError(error || "SERVER ERROR");
   }
+
+  setter(father:Father){
+    this.father = father;
+  }
+
+  getter(){
+    return this.father;
+  }
+
+
 }
