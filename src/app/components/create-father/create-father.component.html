@@ -1,1 +1,21 @@
-Tutaj tworzymy fathera.
+<div class="container">
+    <form (ngSubmit)="processForm()">
+        <div class="form group">
+            <label for="firstName">First Name</label>
+            <input type="text" name="firstName" class="form-control" [(ngModel)]="father.firstName">
+        </div>
+        <div class="form group">
+            <label for="secondName">Second Name</label>
+            <input type="text" name="secondName" class="form-control" [(ngModel)]="father.secondName">
+        </div>
+        <div class="form group">
+            <label for="birthDate">Birth Date</label>
+            <input type="text" name="birthDate" class="form-control" [(ngModel)]="father.birthDate">
+        </div>
+        <div class="form group">
+            <label for="pesel">PESEL</label>
+            <input type="text" name="pesel" class="form-control" [(ngModel)]="father.pesel">
+        </div>
+        <input type="submit" value="save" class="btn btn-cuccess">
+    </form>
+</div>
