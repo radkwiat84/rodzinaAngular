@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Route } from '@angular/compiler/src/core';
+import { Father } from '../../father';
+import { FatherService } from '../../shared_service/father.service';
 
 @Component({
   selector: 'app-index',
@@ -6,10 +10,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-
-  constructor() { }
+  private father: Father;
+  constructor(private _router: Router, private _fatherService: FatherService) { }
 
   ngOnInit() {
   }
+
+  startEvent() {
+    let father = new Father();
+    this._fatherService.setter(father);
+    this._router.navigate(['/createFather']);
+  }
+
 
 }
