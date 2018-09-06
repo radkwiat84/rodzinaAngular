@@ -17,7 +17,7 @@ export class FatherService {
   constructor(private _http: Http) { }
 
   createFather(father: Father) {
-    return this._http.post(this.baseUrl + '/createFather', this.options)
+    return this._http.post(this.baseUrl + '/createFather',JSON.stringify(father), this.options)
       .pipe(map((response: Response) => response.json()), catchError(this.errorHandler));
   }
 
