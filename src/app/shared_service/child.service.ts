@@ -21,6 +21,13 @@ export class ChildService {
       .pipe(map((response: Response) => response.json()), catchError(this.errorHandler));
   }
 
+  readChildren(){
+    return this._http.get(this.baseUrl+'/children', this.options)
+      .pipe(map((response: Response)=> response.json()), catchError(this.errorHandler));
+  }
+
+
+
   errorHandler(error: Response) {
     return throwError(error || "SERVER ERROR");
   }

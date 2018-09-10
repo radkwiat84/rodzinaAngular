@@ -1,3 +1,5 @@
+import { Family } from "./family";
+
 export class Child {
     id:Number;
     firstName:string;
@@ -5,4 +7,5 @@ export class Child {
     sex:string;
     birthDate:string;
     pesel:string;
+    family: Family;
 }

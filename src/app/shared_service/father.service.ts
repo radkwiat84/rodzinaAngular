@@ -21,7 +21,7 @@ export class FatherService {
       .pipe(map((response: Response) => response.json()), catchError(this.errorHandler));
   }
 
-  getFathers() {
+  readFathers() {
     return this._http.get(this.baseUrl + '/fathers', this.options)
       .pipe(map((response: Response) => response.json()), catchError(this.errorHandler));
 
