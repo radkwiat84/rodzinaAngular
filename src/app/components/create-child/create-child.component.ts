@@ -31,15 +31,15 @@ export class CreateChildComponent implements OnInit {
     }
   }
 
-  goAndCreateFamily(){
-    let family = new Family();
-    this._familyService.setter(family);
-    this._familyService.createFamily(family).subscribe((check)=>{
-      console.log(check);
-      this._router.navigate(['/createFamily']);
-    });
+  // goAndCreateFamily(){
+  //   let family = new Family();
+  //   this._familyService.setter(family);
+  //   this._familyService.createFamily(family).subscribe((check)=>{
+  //     console.log(check);
+  //     this._router.navigate(['/createFamily']);
+  //   });
 
-  }
+  // }
 
   //tutaj nie przekazuje modelu dziecka... 
   refreshSite() {

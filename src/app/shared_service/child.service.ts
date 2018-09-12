@@ -17,13 +17,18 @@ export class ChildService {
   constructor(private _http: Http) { }
 
   createChild(child: Child) {
-    return this._http.post(this.baseUrl + '/createChild', JSON.stringify(child), this.options)
+    return this._http.post(this.baseUrl + '/child', JSON.stringify(child), this.options)
       .pipe(map((response: Response) => response.json()), catchError(this.errorHandler));
   }
 
-  readChildren(){
-    return this._http.get(this.baseUrl+'/children', this.options)
-      .pipe(map((response: Response)=> response.json()), catchError(this.errorHandler));
+  readChildren() {
+    return this._http.get(this.baseUrl + '/children', this.options)
+      .pipe(map((response: Response) => response.json()), catchError(this.errorHandler));
+  }
+
+  addChildToFamily(child: Child) {
+    return this._http.put(this.baseUrl + '/child', JSON.stringify(child), this.options)
+      .pipe(map((response: Response) => response.json()), catchError(this.errorHandler))
   }
 
 

@@ -5,7 +5,8 @@ import { Father } from '../../father';
 import { Child } from '../../child';
 import { FatherService } from '../../shared_service/father.service';
 import { ChildService } from '../../shared_service/child.service';
-import { ChildrenOutletContexts } from '@angular/router';
+import { ChildrenOutletContexts, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-create-family',
@@ -14,18 +15,17 @@ import { ChildrenOutletContexts } from '@angular/router';
 })
 export class CreateFamilyComponent implements OnInit {
   private id: Number;
-  private family: Family;
+  private families: Family[];
   private fathers: Father[];
   private children: Child[];
+  private family: Family;
+  private father: Father;
 
 
 
-  constructor(private _familyService: FamilyService, private _fatherService: FatherService, private _childService: ChildService) { }
+  constructor(private _familyService: FamilyService, private _fatherService: FatherService, private _router: Router, private _childService: ChildService) { }
 
   ngOnInit() {
-    this.family = this._familyService.getter();
-    let id = this.id = this.family.id;
-
     this._fatherService.readFathers().subscribe((fathers) => {
       let fathersWithoutFamily: Father[] = [];
       for (let father of fathers) {
@@ -38,17 +38,29 @@ export class CreateFamilyComponent implements OnInit {
       console.log(error);
     });
 
-    this._childService.readChildren().subscribe((children) => {
-      let childrenWithoutFamily: Child[] = [];
-      for (let child of children) {
-        if (child.family == null) {
-          childrenWithoutFamily.push(child);
-        }
-      }
-      this.children = childrenWithoutFamily;
-    }, (error) => {
-      console.log(error);
-    })
+    // this._childService.readChildren().subscribe((children) => {
+    //   this.children = children;
+    // }, (error) => {
+    //   console.log(error);
+    // });
+
+    // this._familyService.readFamilies().subscribe((families) => {
+    //   this.family = families[families.length - 1];
+    //   console.log(this.family.id);
+    // });
   }
 
+  processFather(father) {
+    this._fatherService.setter(father);
+    this._router.navigate(['creatingDecision']);
+  }
+
+  // addChildToFamily(child) {
+  //   this._childService.setter(child);
+  //   console.log(child.id);
+  // }
+
+
 }
+
+

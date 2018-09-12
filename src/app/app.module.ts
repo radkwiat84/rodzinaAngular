@@ -12,14 +12,20 @@ import {ChildService} from './shared_service/child.service';
 import { CreateFamilyComponent } from './components/create-family/create-family.component';
 import {FamilyService}  from './shared_service/family.service';
 import { DecisionComponent } from './components/decision/decision.component';
+import { CreateDecisionComponent } from './components/create-decision/create-decision.component';
+import { AddChildToFamilyComponent } from './components/add-child-to-family/add-child-to-family.component';
+import { AddChildDecisionComponent } from './components/add-child-decision/add-child-decision.component';
 
 
 const appRoutes:Routes=[
   {path:'', component:IndexComponent},
   {path:'createFather', component:CreateFatherComponent},
   {path:'createChild', component:CreateChildComponent},
-  {path:'createFamily', component:CreateFamilyComponent},
-  {path:'decision' , component:DecisionComponent}
+  {path:'addFatherToFamily', component:CreateFamilyComponent},
+  {path:'decision' , component:DecisionComponent},
+  {path:'creatingDecision', component:CreateDecisionComponent},
+  {path:'addChildToFamily', component:AddChildToFamilyComponent}, 
+  {path:'addChildDecision', component:AddChildDecisionComponent}
 ]
 
 
@@ -30,7 +36,10 @@ const appRoutes:Routes=[
     CreateFatherComponent,
     CreateChildComponent,
     CreateFamilyComponent,
-    DecisionComponent
+    DecisionComponent,
+    CreateDecisionComponent,
+    AddChildToFamilyComponent,
+    AddChildDecisionComponent
   ],
   imports: [
     BrowserModule, 

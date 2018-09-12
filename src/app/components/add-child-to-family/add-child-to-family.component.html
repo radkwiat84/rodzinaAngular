@@ -1,0 +1,27 @@
+<div class="container">
+  <table class="table table-striped center">
+    <thead>
+      <td colspan="6" class="bigFont">Children</td>
+    </thead>
+    <thead>
+      <th>First Name</th>
+      <th>Second Name</th>
+      <th>Birth Date</th>
+      <th>SEX</th>
+      <th>PESEL</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let child of children">
+        <td>{{child.firstName}}</td>
+        <td>{{child.secondName}}</td>
+        <td>{{child.birthDate}}</td>
+        <td>{{child.sex}}</td>
+        <td>{{child.pesel}}</td>
+        <td><button class="btn btn-primary" (click)="processChild(child)">Add Child to the Family</button>
+          <button class="btn btn-danger" (click)="stopCreatingFamily()">Stop creating the Family</button></td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>

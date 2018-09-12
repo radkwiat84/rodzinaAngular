@@ -3,6 +3,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Father } from '../father';
 import { throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { Family } from '../family';
 
 
 @Injectable({
@@ -12,12 +13,13 @@ export class FatherService {
   private baseUrl: string = 'http://localhost:8080/father';
   private headers = new Headers({ 'Content-Type': 'application/json' });
   private options = new RequestOptions({ headers: this.headers });
-  private father:Father;
+  private father: Father;
+  private family: Family;
 
   constructor(private _http: Http) { }
 
   createFather(father: Father) {
-    return this._http.post(this.baseUrl + '/createFather',JSON.stringify(father), this.options)
+    return this._http.post(this.baseUrl + '/father', JSON.stringify(father), this.options)
       .pipe(map((response: Response) => response.json()), catchError(this.errorHandler));
   }
 
@@ -31,13 +33,18 @@ export class FatherService {
     return throwError(error || "SERVER ERROR");
   }
 
-  setter(father:Father){
+  setter(father: Father) {
     this.father = father;
   }
 
-  getter(){
+  getter() {
     return this.father;
   }
 
+  addFatherToFamily(father: Father) {
+    return this._http.put(this.baseUrl + '/father', JSON.stringify(father), this.options)
+      .pipe(map((response: Response)=>response.json()), catchError(this.errorHandler));
+
+  }
 
 }

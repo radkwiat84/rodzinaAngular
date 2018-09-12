@@ -26,6 +26,7 @@ export class CreateFatherComponent implements OnInit {
     this._fatherService.createFather(this.father).subscribe((check) => {
       console.log(check);
     });
+    
     let child = new Child();
     this._childService.setter(child);
     this._router.navigate(['/createChild']);

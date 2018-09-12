@@ -11,7 +11,7 @@ import { Child } from '../../child';
   styleUrls: ['./decision.component.css']
 })
 export class DecisionComponent implements OnInit {
-
+  private family: Family;
 
   constructor(private _childService: ChildService, private _familyService: FamilyService, private _router: Router) { }
 
@@ -23,7 +23,7 @@ export class DecisionComponent implements OnInit {
     this._familyService.setter(family);
     this._familyService.createFamily(family).subscribe((check)=>{
       console.log(check);
-      this._router.navigate(['createFamily']);
+      this._router.navigate(['addFatherToFamily']);
     });
 
   };

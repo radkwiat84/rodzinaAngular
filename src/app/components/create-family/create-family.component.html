@@ -1,11 +1,10 @@
 <div class="container">
   <div class="container">
-    <table class="table table-striped">
+    <table class="table table-striped center">
       <thead>
-        <td colspan="6" class="center bigFont">Fathers</td>
+        <td colspan="5" class="center bigFont">Fathers</td>
       </thead>
       <thead>
-        <th>Id</th>
         <th>First Name</th>
         <th>Second Name</th>
         <th>Birth Date</th>
@@ -14,43 +13,13 @@
       </thead>
       <tbody>
         <tr *ngFor="let father of fathers">
-          <td>{{father.id}}</td>
           <td>{{father.firstName}}</td>
           <td>{{father.secondName}}</td>
           <td>{{father.birthDate}}</td>
           <td>{{father.pesel}}</td>
-          <td><button class="btn btn-primary">Add father to the family</button>
-          </td>
+          <td><button class="btn btn-primary" (click)="processFather(father)">Add father to the Family</button></td>
         </tr>
       </tbody>
     </table>
-  </div>
-  <div class="container">
-    <table class="table table-striped">
-      <thead>
-        <td colspan="7" class="center bigFont">Children
-      </thead>
-      <thead>
-        <th>Id</th>
-        <th>First Name</th>
-        <th>Second Name</th>
-        <th>Birth Date</th>
-        <th>Sex</th>
-        <th>PESEL</th>
-        <th>Action</th>
-      </thead>
-      <tbody>
-        <tr *ngFor="let child of children">
-          <td>{{child.id}}</td>
-          <td>{{child.firstName}}</td>
-          <td>{{child.secondName}}</td>
-          <td>{{child.birthDate}}</td>
-          <td>{{child.sex}}</td>
-          <td>{{child.pesel}}</td>
-          <td><button class="btn btn-primary">Add child to the family</button></td>
-        </tr>
-      </tbody>
-    </table>
-   {{id}} 
   </div>
 </div>

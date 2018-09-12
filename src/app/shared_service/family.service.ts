@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Query } from '@angular/core';
 import { Headers, RequestOptions, Http, Response } from '@angular/http';
 import { Family } from '../family';
 import { map, catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { query } from '@angular/core/src/render3/query';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,11 @@ export class FamilyService {
       .pipe(map((response: Response)=> response.json()), catchError(this.errorHandler));
   }
 
+  readFamilies(){
+    return this._http.get(this.baseUrl+'/families', this.options)
+      .pipe(map((responce: Response)=> responce.json()), catchError(this.errorHandler));
+  }
+
   errorHandler(error: Response) {
     return throwError(error || "SERVER ERROR");
   }
@@ -36,4 +42,6 @@ export class FamilyService {
   getter() {
     return this.family;
   }
+
+  
 }

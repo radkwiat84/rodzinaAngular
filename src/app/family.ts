@@ -1,3 +1,3 @@
 export class Family {
-    id:Number;
+    id: Number;
 }
