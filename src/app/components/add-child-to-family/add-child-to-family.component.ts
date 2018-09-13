@@ -3,6 +3,7 @@ import { ChildService } from '../../shared_service/child.service';
 import { Child } from '../../child';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-add-child-to-family',
   templateUrl: './add-child-to-family.component.html',
@@ -23,13 +24,13 @@ export class AddChildToFamilyComponent implements OnInit {
     });
 
   }
-  processChild(child){
+  processChild(child) {
     this._childService.setter(child);
     this._router.navigate(['addChildDecision'])
   }
 
-  stopCreatingFamily(){
-    this._router.navigate(['']);
+  stopCreatingFamily() {
+    this._router.navigate(['readFamily']);
   }
 
 }

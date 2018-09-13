@@ -25,26 +25,8 @@ export class CreateChildComponent implements OnInit {
       console.log(check);
       this._router.navigate(['decision']);
     });
-    // this.refreshSite();
     (error) => {
       console.log(error);
     }
-  }
-
-  // goAndCreateFamily(){
-  //   let family = new Family();
-  //   this._familyService.setter(family);
-  //   this._familyService.createFamily(family).subscribe((check)=>{
-  //     console.log(check);
-  //     this._router.navigate(['/createFamily']);
-  //   });
-
-  // }
-
-  //tutaj nie przekazuje modelu dziecka... 
-  refreshSite() {
-    window.location.reload();
-    let child = new Child();
-    this._childService.setter(child);
   }
 }

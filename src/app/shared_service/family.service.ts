@@ -21,14 +21,14 @@ export class FamilyService {
       .pipe(map((responce: Response) => responce.json()), catchError(this.errorHandler));
   }
 
-  readFamily(id:Number){
-    return this._http.get(this.baseUrl+'/family/'+id, this.options)
-      .pipe(map((response: Response)=> response.json()), catchError(this.errorHandler));
+  readFamily(id: Number) {
+    return this._http.get(this.baseUrl + '/family/' + id, this.options)
+      .pipe(map((response: Response) => response.json()), catchError(this.errorHandler));
   }
 
-  readFamilies(){
-    return this._http.get(this.baseUrl+'/families', this.options)
-      .pipe(map((responce: Response)=> responce.json()), catchError(this.errorHandler));
+  readFamilies() {
+    return this._http.get(this.baseUrl + '/families', this.options)
+      .pipe(map((responce: Response) => responce.json()), catchError(this.errorHandler));
   }
 
   errorHandler(error: Response) {
@@ -43,5 +43,10 @@ export class FamilyService {
     return this.family;
   }
 
-  
+  findCurrentFamily() {
+    return this._http.get(this.baseUrl + '/currentFamily', this.options)
+      .pipe(map((response: Response) => response.json()), catchError(this.errorHandler));
+  }
+
+
 }

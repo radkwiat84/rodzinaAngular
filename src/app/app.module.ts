@@ -15,6 +15,7 @@ import { DecisionComponent } from './components/decision/decision.component';
 import { CreateDecisionComponent } from './components/create-decision/create-decision.component';
 import { AddChildToFamilyComponent } from './components/add-child-to-family/add-child-to-family.component';
 import { AddChildDecisionComponent } from './components/add-child-decision/add-child-decision.component';
+import { ReadFamilyComponent } from './components/read-family/read-family.component';
 
 
 const appRoutes:Routes=[
@@ -25,7 +26,8 @@ const appRoutes:Routes=[
   {path:'decision' , component:DecisionComponent},
   {path:'creatingDecision', component:CreateDecisionComponent},
   {path:'addChildToFamily', component:AddChildToFamilyComponent}, 
-  {path:'addChildDecision', component:AddChildDecisionComponent}
+  {path:'addChildDecision', component:AddChildDecisionComponent}, 
+  {path:'readFamily', component: ReadFamilyComponent}
 ]
 
 
@@ -39,7 +41,8 @@ const appRoutes:Routes=[
     DecisionComponent,
     CreateDecisionComponent,
     AddChildToFamilyComponent,
-    AddChildDecisionComponent
+    AddChildDecisionComponent,
+    ReadFamilyComponent
   ],
   imports: [
     BrowserModule, 

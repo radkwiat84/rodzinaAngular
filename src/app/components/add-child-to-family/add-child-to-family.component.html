@@ -11,6 +11,9 @@
       <th>PESEL</th>
       <th>Action</th>
     </thead>
+    <thead>
+      <td colspan="6"><button class="btn btn-danger" (click)="stopCreatingFamily()">Stop creating the Family</button></td>
+    </thead>
     <tbody>
       <tr *ngFor="let child of children">
         <td>{{child.firstName}}</td>
@@ -19,9 +22,8 @@
         <td>{{child.sex}}</td>
         <td>{{child.pesel}}</td>
         <td><button class="btn btn-primary" (click)="processChild(child)">Add Child to the Family</button>
-          <button class="btn btn-danger" (click)="stopCreatingFamily()">Stop creating the Family</button></td>
+        </td>
       </tr>
     </tbody>
-
   </table>
 </div>

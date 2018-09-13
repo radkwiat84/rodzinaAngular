@@ -1,25 +1,23 @@
 <div class="container">
-  <div class="container">
-    <table class="table table-striped center">
-      <thead>
-        <td colspan="5" class="center bigFont">Fathers</td>
-      </thead>
-      <thead>
-        <th>First Name</th>
-        <th>Second Name</th>
-        <th>Birth Date</th>
-        <th>PESEL</th>
-        <th>Action</th>
-      </thead>
-      <tbody>
-        <tr *ngFor="let father of fathers">
-          <td>{{father.firstName}}</td>
-          <td>{{father.secondName}}</td>
-          <td>{{father.birthDate}}</td>
-          <td>{{father.pesel}}</td>
-          <td><button class="btn btn-primary" (click)="processFather(father)">Add father to the Family</button></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <table class="table table-striped center">
+    <thead>
+      <td colspan="5" class="center bigFont">Fathers</td>
+    </thead>
+    <thead>
+      <th>First Name</th>
+      <th>Second Name</th>
+      <th>Birth Date</th>
+      <th>PESEL</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let father of fathers">
+        <td>{{father.firstName}}</td>
+        <td>{{father.secondName}}</td>
+        <td>{{father.birthDate}}</td>
+        <td>{{father.pesel}}</td>
+        <td><button class="btn btn-primary" (click)="processFather(father)">Add father to the Family</button></td>
+      </tr>
+    </tbody>
+  </table>
 </div>

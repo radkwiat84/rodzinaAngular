@@ -4,6 +4,7 @@ import { Father } from '../father';
 import { throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { Family } from '../family';
+import { jsonpFactory } from '@angular/http/src/http_module';
 
 
 @Injectable({
@@ -47,4 +48,8 @@ export class FatherService {
 
   }
 
+  getFatherByFamilyId(id: Number){
+    return this._http.get(this.baseUrl + '/fatherFamilyId/' + id, this.options)
+      .pipe(map((response: Response)=> response.json()), catchError(this.errorHandler));
+  }
 }

@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="container">
+    <table class="table table-striped center">
+      <thead>
+        <td colspan="4" class="biggerFont">Added Family</td>
+      </thead>
+      <thead>
+        <td colspan="4"><button class="btn btn-primary center" (click)="goToTheIndex()">Go to the Index</button></td>
+      </thead>
+      <thead>
+        <td colspan="4" class="bigFont">Father</td>
+      </thead>
+      <thead>
+        <th>First Name</th>
+        <th>Second Name</th>
+        <th>Birth Date</th>
+        <th>PESEL</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{firstName}}</td>
+          <td>{{secondName}}</td>
+          <td>{{birthDate}}</td>
+          <td>{{pesel}}</td>
+          <!-- <td>{{father.firstName}}</td>
+          <td>{{father.secondName}}</td>
+          <td>{{father.birthDate}}</td>
+          <td>{{father.pesel}}</td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="container">
+    <table class="table table-striped center">
+      <thead>
+        <td colspan="5" class="bigFont">Children</td>
+      </thead>
+      <thead>
+        <th>First Name</th>
+        <th>Second Name</th>
+        <th>Sex</th>
+        <th>Birth Date</th>
+        <th>PESEL</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let child of children">
+          <td>{{child.firstName}}</td>
+          <td>{{child.secondName}}</td>
+          <td>{{child.sex}}</td>
+          <td>{{child.birthDate}}</td>
+          <td>{{child.pesel}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
