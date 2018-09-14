@@ -12,13 +12,14 @@ import { ChildService } from '../../shared_service/child.service';
 })
 export class CreateFatherComponent implements OnInit {
   private father: Father;
-  private child: Child;
+  
 
 
   constructor(private _fatherService: FatherService, private _router: Router, private _childService: ChildService) { }
 
   ngOnInit() {
     this.father = this._fatherService.getter();
+    console.log(this.father);
 
   }
 

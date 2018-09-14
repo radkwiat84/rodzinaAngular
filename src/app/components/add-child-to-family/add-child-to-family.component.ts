@@ -16,7 +16,7 @@ export class AddChildToFamilyComponent implements OnInit {
   constructor(private _childService: ChildService, private _router: Router) { }
 
   ngOnInit() {
-    this._childService.readChildren().subscribe((children) => {
+    this._childService.readChildrenWithoutFamily().subscribe((children) => {
       console.log(children);
       this.children = children;
     }, (error) => {

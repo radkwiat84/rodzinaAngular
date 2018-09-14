@@ -21,7 +21,7 @@ export class ChildService {
       .pipe(map((response: Response) => response.json()), catchError(this.errorHandler));
   }
 
-  readChildren() {
+  readChildrenWithoutFamily() {
     return this._http.get(this.baseUrl + '/children', this.options)
       .pipe(map((response: Response) => response.json()), catchError(this.errorHandler));
   }
@@ -31,15 +31,23 @@ export class ChildService {
       .pipe(map((response: Response) => response.json()), catchError(this.errorHandler))
   }
 
-  getChildrenIdByFamilyId(id: Number){
-    return this._http.get(this.baseUrl+'/childrenFamilyId/'+id, this.options)
+  getChildrenIdByFamilyId(id: Number) {
+    return this._http.get(this.baseUrl + '/childrenFamilyId/' + id, this.options)
       .pipe(map((response: Response) => response.json()), catchError(this.errorHandler))
   }
 
-  getChildById(id: Number){
+  getChildById(id: Number) {
     return this._http.get(this.baseUrl + '/childById/' + id, this.options)
-      .pipe(map((response: Response)=>response.json()), catchError(this.errorHandler));
+      .pipe(map((response: Response) => response.json()), catchError(this.errorHandler));
   }
+
+  findChildrenFromSearchEngine(firstName: string, secondName: string, pesel: string, birthDate: string, sex: string
+    ) {
+    return this._http.get(this.baseUrl + '/searchingChildren/' + firstName + '/' + secondName + '/' + pesel + '/' + birthDate + '/' + sex
+      , this.options)
+      .pipe(map((response: Response) => response.json()), catchError(this.errorHandler))
+  }
+
 
   errorHandler(error: Response) {
     return throwError(error || "SERVER ERROR");
