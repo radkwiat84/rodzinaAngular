@@ -37,7 +37,7 @@
         <th>Father's birth date</th>
       </thead>
       <tbody>
-        <tr *ngFor="let father of fathers" (click)="getDetailOfFamily()">
+        <tr *ngFor="let father of fathers" (click)="getDetailOfFamily(father)">
           <td>{{father.firstName}}</td>
           <td>{{father.secondName}}</td>
           <td>{{father.pesel}}</td>

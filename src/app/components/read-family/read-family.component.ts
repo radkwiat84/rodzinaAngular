@@ -33,7 +33,7 @@ export class ReadFamilyComponent implements OnInit {
       // console.log(this.id)
       this._fatherService.getFatherByFamilyId(this.family.id).subscribe((father) => {
         console.log(father);
-        // this.father = father;
+        this.father = father;
         this.firstName = father.firstName;
         this.secondName = father.secondName;
         this.birthDate = father.birthDate;

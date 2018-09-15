@@ -3,6 +3,7 @@ import { Child } from '../../child';
 import { ChildService } from '../../shared_service/child.service';
 import { Father } from '../../father';
 import { FatherService } from '../../shared_service/father.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-engine',
@@ -13,7 +14,8 @@ export class SearchEngineComponent implements OnInit {
   private child: Child;
   private fathers: Father[] = [];
 
-  constructor(private _childService: ChildService, private _fatherService: FatherService) { }
+  constructor(private _childService: ChildService, private _fatherService: FatherService,
+    private _rotuer: Router) { }
 
   ngOnInit() {
     this.child = this._childService.getter();
@@ -36,8 +38,10 @@ export class SearchEngineComponent implements OnInit {
 
 
 
-  getDetailOfFamily() {
-
+  getDetailOfFamily(father) {
+     this._fatherService.setter(father)
+     this._rotuer.navigate(['getFamily'])
+     
   }
 
 
