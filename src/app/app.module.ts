@@ -18,6 +18,8 @@ import { AddChildDecisionComponent } from './components/add-child-decision/add-c
 import { ReadFamilyComponent } from './components/read-family/read-family.component';
 import { SearchEngineComponent } from './components/search-engine/search-engine.component';
 import { GetFamilyComponent } from './components/get-family/get-family.component';
+import { MenuComponent } from './components/menu/menu.component';
+
 
 
 const appRoutes: Routes = [
@@ -26,9 +28,9 @@ const appRoutes: Routes = [
   { path: 'createChild', component: CreateChildComponent },
   { path: 'addFatherToFamily', component: CreateFamilyComponent },
   { path: 'decision', component: DecisionComponent },
-  { path: 'creatingDecision', component: CreateDecisionComponent },
+  // { path: 'creatingDecision', component: CreateDecisionComponent },
   { path: 'addChildToFamily', component: AddChildToFamilyComponent },
-  { path: 'addChildDecision', component: AddChildDecisionComponent },
+  // { path: 'addChildDecision', component: AddChildDecisionComponent },
   { path: 'readFamily', component: ReadFamilyComponent },
   { path: 'searchEngine', component: SearchEngineComponent },
   { path: 'getFamily', component: GetFamilyComponent }
@@ -48,7 +50,8 @@ const appRoutes: Routes = [
     AddChildDecisionComponent,
     ReadFamilyComponent,
     SearchEngineComponent,
-    GetFamilyComponent
+    GetFamilyComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
