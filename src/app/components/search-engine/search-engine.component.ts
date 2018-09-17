@@ -19,10 +19,11 @@ export class SearchEngineComponent implements OnInit {
 
   ngOnInit() {
     this.child = this._childService.getter();
+    console.log(this.child);
+
   }
 
   startSearching() {
-    console.log(this.child.firstName)
     this._childService.findChildrenFromSearchEngine(this.child.firstName, this.child.secondName, this.child.pesel, this.child.birthDate, this.child.sex
     ).subscribe((children) => {
       console.log(children);
@@ -34,15 +35,13 @@ export class SearchEngineComponent implements OnInit {
     }, (error) => {
       console.log(error);
     })
+    let child: Child;
+    this._childService.setter(child);
   }
-
-
 
   getDetailOfFamily(father) {
-     this._fatherService.setter(father)
-     this._rotuer.navigate(['getFamily'])
-     
+    this._fatherService.setter(father)
+    this._rotuer.navigate(['getFamily'])
+
   }
-
-
 }

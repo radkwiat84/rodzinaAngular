@@ -27,7 +27,10 @@ export class AddChildToFamilyComponent implements OnInit {
   processForm(child) {
     this._childService.addChildToFamily(child).subscribe((addedChild) => {
       console.log(addedChild);
-      this.children.splice(this.children.indexOf(child), 1)
+      this.children.splice(this.children.indexOf(child), 1);
+      if(this.children.length == 0){
+        this.stopCreatingFamily();
+      }
     }, (error) => {
       console.log(error);
     })

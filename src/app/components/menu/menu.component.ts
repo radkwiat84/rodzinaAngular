@@ -12,6 +12,8 @@ import { Child } from '../../child';
 })
 export class MenuComponent implements OnInit {
 
+  // private child: Child;
+
   constructor(private _router: Router, private _fatherService: FatherService, private _childService: ChildService) { }
 
   ngOnInit() {
@@ -25,6 +27,7 @@ export class MenuComponent implements OnInit {
 
   searchEngine(){
     let child = new Child();
+    // this.child = child;
     this._childService.setter(child);
     this._router.navigate(['searchEngine']);
   }

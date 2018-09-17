@@ -12,9 +12,7 @@ import { ChildService } from './shared_service/child.service';
 import { CreateFamilyComponent } from './components/create-family/create-family.component';
 import { FamilyService } from './shared_service/family.service';
 import { DecisionComponent } from './components/decision/decision.component';
-import { CreateDecisionComponent } from './components/create-decision/create-decision.component';
 import { AddChildToFamilyComponent } from './components/add-child-to-family/add-child-to-family.component';
-import { AddChildDecisionComponent } from './components/add-child-decision/add-child-decision.component';
 import { ReadFamilyComponent } from './components/read-family/read-family.component';
 import { SearchEngineComponent } from './components/search-engine/search-engine.component';
 import { GetFamilyComponent } from './components/get-family/get-family.component';
@@ -28,10 +26,8 @@ const appRoutes: Routes = [
   { path: 'createChild', component: CreateChildComponent },
   { path: 'addFatherToFamily', component: CreateFamilyComponent },
   { path: 'decision', component: DecisionComponent },
-  // { path: 'creatingDecision', component: CreateDecisionComponent },
   { path: 'addChildToFamily', component: AddChildToFamilyComponent },
-  // { path: 'addChildDecision', component: AddChildDecisionComponent },
-  { path: 'readFamily', component: ReadFamilyComponent },
+    { path: 'readFamily', component: ReadFamilyComponent },
   { path: 'searchEngine', component: SearchEngineComponent },
   { path: 'getFamily', component: GetFamilyComponent }
 ]
@@ -45,9 +41,7 @@ const appRoutes: Routes = [
     CreateChildComponent,
     CreateFamilyComponent,
     DecisionComponent,
-    CreateDecisionComponent,
     AddChildToFamilyComponent,
-    AddChildDecisionComponent,
     ReadFamilyComponent,
     SearchEngineComponent,
     GetFamilyComponent,
