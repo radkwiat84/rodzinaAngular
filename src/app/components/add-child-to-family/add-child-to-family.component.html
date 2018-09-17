@@ -21,8 +21,12 @@
         <td>{{child.birthDate}}</td>
         <td>{{child.sex}}</td>
         <td>{{child.pesel}}</td>
-        <td><button class="btn btn-primary" (click)="processChild(child)">Add Child to the Family</button>
-        </td>
+        <td><div class="container">
+          <form (ngSubmit)="processForm(child)" class="center">
+            <input type="submit" value="Add Child to the Family" class="btn btn-danger"></form>
+        </div></td>
+        <!-- <td><button class="btn btn-primary" (click)="processChild(child)">Add Child to the Family</button> -->
+        <!-- </td> -->
       </tr>
     </tbody>
   </table>

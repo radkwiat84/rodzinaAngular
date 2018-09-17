@@ -45,7 +45,7 @@ export class ChildService {
     ) {
     return this._http.get(this.baseUrl + '/searchingChildren/' + firstName + '/' + secondName + '/' + pesel + '/' + birthDate + '/' + sex
       , this.options)
-      .pipe(map((response: Response) => response.json()), catchError(this.errorHandler))
+      .pipe(map((response: Response) => response.json()), catchError(this.errorHandler));
   }
 
 

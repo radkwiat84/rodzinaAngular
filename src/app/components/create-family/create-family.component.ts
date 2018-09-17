@@ -37,17 +37,6 @@ export class CreateFamilyComponent implements OnInit {
     }, (error) => {
       console.log(error);
     });
-
-    // this._childService.readChildren().subscribe((children) => {
-    //   this.children = children;
-    // }, (error) => {
-    //   console.log(error);
-    // });
-
-    // this._familyService.readFamilies().subscribe((families) => {
-    //   this.family = families[families.length - 1];
-    //   console.log(this.family.id);
-    // });
   }
 
   processFather(father) {
@@ -55,11 +44,14 @@ export class CreateFamilyComponent implements OnInit {
     this._router.navigate(['creatingDecision']);
   }
 
-  // addChildToFamily(child) {
-  //   this._childService.setter(child);
-  //   console.log(child.id);
-  // }
-
+  processForm(father){
+    this._fatherService.addFatherToFamily(father).subscribe((father)=>{
+      console.log(father);
+    }, (error)=>{
+      console.log(error);
+    })
+    this._router.navigate(['addChildToFamily']);
+  }
 
 }
 

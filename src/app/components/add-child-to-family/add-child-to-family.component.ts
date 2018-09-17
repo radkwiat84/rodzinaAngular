@@ -22,8 +22,17 @@ export class AddChildToFamilyComponent implements OnInit {
     }, (error) => {
       console.log(error);
     });
-
   }
+
+  processForm(child) {
+    this._childService.addChildToFamily(child).subscribe((child) => {
+      console.log(child);
+      // this.children.splice(this.children.indexOf(child), 1)
+    }, (error) => {
+      console.log(error);
+    })
+  }
+
   processChild(child) {
     this._childService.setter(child);
     this._router.navigate(['addChildDecision'])
